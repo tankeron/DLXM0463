@@ -1,0 +1,47 @@
+# Keil/MDK build outputs
+**/MDK-ARM/Objects/
+**/MDK-ARM/Listings/
+**/MDK-ARM/bin/
+
+# Keil/ARM generated files
+*.o
+*.obj
+*.d
+*.crf
+*.lst
+*.map
+*.lnp
+*.axf
+*.elf
+*.hex
+*.bin
+*.htm
+*.html
+*.iex
+*.dep
+*.build_log.htm
+EventRecorderStub.scvd
+
+# Keil local user/session files
+*.uvguix.*
+*.uvgui.*
+*.uvgui_*
+*.uvopt
+*.uvopt.bak
+*.uvproj.bak
+*.uvoptx.bak
+*.uvprojx.bak
+
+# Debugger logs/settings generated locally
+JLinkLog.txt
+JLinkSettings.ini
+*.log
+
+# Common editor/OS temporary files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+Thumbs.db
+Desktop.ini
