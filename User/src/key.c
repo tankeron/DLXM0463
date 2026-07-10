@@ -309,25 +309,29 @@ void KeyEventHandlerTask(void *pvParameters)
             case KEY_EVENT_PRESS:
                 switch (key_event.key_id)
                 {
-                case 0x0010:
-                case 0x0040:
-					Motor_CommandPairSpeedRPM(SPEED_D, 1, SPEED_D, 1);
-                    break;
-				case 0x0020:
-                case 0x0080:
-					Motor_CommandPairSpeedRPM(SPEED_D, 2, SPEED_D, 2);
-                    break;
-				case (0x0010|0x0002):
-					Motor_CommandPairSpeedRPM(SPEED_D, 1, 0, 0);
-					break;
-				case (0x0020|0x0001):
+                case 0x0001:
 					Motor_CommandPairSpeedRPM(SPEED_D, 2, 0, 0);
 					break;
-				case (0x0040|0x0008):
-					Motor_CommandPairSpeedRPM(0, 0, SPEED_D, 1);
-					break;
-				case (0x0080|0x0004):
+                case 0x0004:
 					Motor_CommandPairSpeedRPM(0, 0, SPEED_D, 2);
+                    break;
+				case 0x0002:
+					Motor_CommandPairSpeedRPM(SPEED_D, 1, 0, 0);
+					break;
+                case 0x0008:
+					Motor_CommandPairSpeedRPM(0, 0, SPEED_D, 1);
+                    break;
+				case (0x0010|0x0001):
+					Motor_CommandPairSpeedRPM(SPEED_D, 2, SPEED_D, 2);
+					break;
+				case (0x0020|0x0002):
+					Motor_CommandPairSpeedRPM(SPEED_D, 1, SPEED_D, 1);
+					break;
+				case (0x0040|0x0004):
+					Motor_CommandPairSpeedRPM(SPEED_D, 2, SPEED_D, 2);
+					break;
+				case (0x0080|0x0008):
+					Motor_CommandPairSpeedRPM(SPEED_D, 1, SPEED_D, 1);
 					break;
                 default:
                     break;

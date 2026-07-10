@@ -330,10 +330,10 @@ void Motor_Deinit(void)
 static void pwm_apply(uint8_t ch, uint16_t cmp)
 {
     switch (ch) {
-    case 1: TIM_Compare2_Set(TIM1, cmp); break;
-    case 2: TIM_Compare1_Set(TIM1, cmp); break;
-    case 3: TIM_Compare4_Set(TIM1, cmp); break;
-    case 4: TIM_Compare3_Set(TIM1, cmp); break;
+    case 1: TIM_Compare1_Set(TIM1, cmp); break;
+    case 2: TIM_Compare2_Set(TIM1, cmp); break;
+    case 3: TIM_Compare3_Set(TIM1, cmp); break;
+    case 4: TIM_Compare4_Set(TIM1, cmp); break;
     default: break;
     }
 }
