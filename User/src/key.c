@@ -49,10 +49,10 @@ Key_t keys[NUM_KEYS] =
     {GPIOB, GPIO_PIN_8},
     {GPIOA, GPIO_PIN_12},
     {GPIOB, GPIO_PIN_3},
-    {GPIOB, GPIO_PIN_4},
-    {GPIOD, GPIO_PIN_12},
-	{GPIOD, GPIO_PIN_13},
-    {GPIOB, GPIO_PIN_5}
+//    {GPIOB, GPIO_PIN_4},
+//    {GPIOD, GPIO_PIN_12},
+//	{GPIOD, GPIO_PIN_13},
+//    {GPIOB, GPIO_PIN_5}
 };
 
 QueueHandle_t keyEventQueue = NULL;
@@ -310,16 +310,16 @@ void KeyEventHandlerTask(void *pvParameters)
                 switch (key_event.key_id)
                 {
                 case 0x0001:
-					Motor_CommandPairSpeedRPM(SPEED_D, 2, 0, 0);
-					break;
-                case 0x0004:
-					Motor_CommandPairSpeedRPM(0, 0, SPEED_D, 2);
-                    break;
-				case 0x0002:
 					Motor_CommandPairSpeedRPM(SPEED_D, 1, 0, 0);
 					break;
-                case 0x0008:
+                case 0x0004:
 					Motor_CommandPairSpeedRPM(0, 0, SPEED_D, 1);
+                    break;
+				case 0x0002:
+					Motor_CommandPairSpeedRPM(SPEED_D, 2, 0, 0);
+					break;
+                case 0x0008:
+					Motor_CommandPairSpeedRPM(0, 0, SPEED_D, 2);
                     break;
 				case (0x0010|0x0001):
 					Motor_CommandPairSpeedRPM(SPEED_D, 2, SPEED_D, 2);
