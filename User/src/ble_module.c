@@ -163,13 +163,13 @@ void ble_control_Task(void* parameter)
         if (xQueueReceive(ble_rx_queue, &cmd_buf, portMAX_DELAY) == pdTRUE)
         {
             if ((cmd_buf[0] == 0x03) && (cmd_buf[1] == 0x12)) {
-                Motor_CommandPairSpeedRPM(SPEED_D, 1, 0, 0);
+                Motor_CommandPairSpeedRPM(0, 0, SPEED_D, 1); 
             } else if ((cmd_buf[0] == 0x03) && (cmd_buf[1] == 0x11)) {
-                Motor_CommandPairSpeedRPM(SPEED_D, 2, 0, 0);
+                Motor_CommandPairSpeedRPM(0, 0, SPEED_D, 2); 
             } else if ((cmd_buf[0] == 0x03) && (cmd_buf[1] == 0x22)) {
-                Motor_CommandPairSpeedRPM(0, 0, SPEED_D, 1);
+                Motor_CommandPairSpeedRPM(SPEED_D, 1, 0, 0);
             } else if ((cmd_buf[0] == 0x03) && (cmd_buf[1] == 0x21)) {
-                Motor_CommandPairSpeedRPM(0, 0, SPEED_D, 2);
+                Motor_CommandPairSpeedRPM(SPEED_D, 2, 0, 0);
             } else if ((cmd_buf[0] == 0x03) && (cmd_buf[1] == 0x32)) {
                 Motor_CommandPairSpeedRPM(SPEED_D, 1, SPEED_D, 1);
             } else if ((cmd_buf[0] == 0x03) && (cmd_buf[1] == 0x31)) {
